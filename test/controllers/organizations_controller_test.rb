@@ -6,17 +6,17 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
     @other_org
   end
 
-  test "should get index" do
+  test 'should get index' do
     get organizations_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_organization_url
     assert_response :success
   end
 
-  test "should create organization" do
+  test 'should create organization' do
     assert_difference('Organization.count') do
       post organizations_url, params: { organization: { is_active: true, name: 'other inc' } }
     end
@@ -24,22 +24,22 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to organization_url(Organization.last)
   end
 
-  test "should show organization" do
+  test 'should show organization' do
     get organization_url(@organization)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_organization_url(@organization)
     assert_response :success
   end
 
-  test "should update organization" do
+  test 'should update organization' do
     patch organization_url(@organization), params: { organization: { is_active: @organization.is_active, name: @organization.name } }
     assert_redirected_to organization_url(@organization)
   end
 
-  test "should destroy organization" do
+  test 'should destroy organization' do
     assert_difference('Organization.count', -1) do
       delete organization_url(@organization)
     end

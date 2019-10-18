@@ -1,45 +1,29 @@
-# Railsのチェックを有効にする
-Rails:
-  Enabled: true
-
-# 日本語でのコメントを許可
-AsciiComments:
+Style/AsciiComments:
   Enabled: false
 
-# モジュール名::クラス名の定義を許可
-ClassAndModuleChildren:
+Style/ClassAndModuleChildren:
   Enabled: false
 
-# メソッド名のprefixに「set_」「get_」を許可
-AccessorMethodName:
+Naming/AccessorMethodName:
   Enabled: false
 
-# 「and」「or」の使用を許可
-AndOr:
+Style/AndOr:
   Enabled: false
 
-# === Style系
-
-# ドキュメント用のコメントは不要
 Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-# hashをメソッドの引数にするときに{}を省略できるけど、書いてもいい設定
 Style/BracesAroundHashParameters:
   Enabled: false
 
-# returnがなくてもいい場所で書いてもいい設定
 Style/RedundantReturn:
   Enabled: false
 
-# array.map(&:somemethod)みたいな書き方ができる場所でしなくてもいい設定
 Style/SymbolProc:
   Enabled: false
-
-# === Lint系
 
 Lint/NonLocalExitFromIterator:
   Enabled: false
@@ -47,11 +31,8 @@ Lint/NonLocalExitFromIterator:
 Lint/UnderscorePrefixedVariableName:
   Enabled: false
 
-# Max length in one line
-LineLength:
-  Max: 120
-
-# === Metrics系
+Metrics/LineLength:
+  Max: 180
 
 Metrics/AbcSize:
   Max: 35
@@ -68,13 +49,7 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 11
 
-Metrics/LineLength:
-  Max: 240
-
-# === 共通設定
-
 AllCops:
-  # target ruby version
   TargetRubyVersion: 2.6
 
   Include:
