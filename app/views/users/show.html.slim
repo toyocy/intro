@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Last name:
+  = @user.last_name
+p
+  strong First name:
+  = @user.first_name
+p
+  strong Email:
+  = @user.email
+p
+  strong Is active:
+  = @user.is_active
+p
+  strong Organization:
+  = @user.organization
+
+=> link_to 'Edit', edit_user_path(@user)
+'|
+=< link_to 'Back', users_path
