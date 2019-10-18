@@ -27,7 +27,7 @@ class OrganizationTest < ActiveSupport::TestCase
 
   test 'should be unique' do
     dup_org = @org.dup
-    @org.save
+    dup_org.name = @org.name
     assert_not dup_org.valid?
   end
 end
