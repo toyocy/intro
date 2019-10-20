@@ -6,7 +6,7 @@
 #  last_name       :string
 #  first_name      :string
 #  email           :string           not null
-#  is_active       :boolean          default("true")
+#  is_active       :boolean          default('true')
 #  organization_id :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
@@ -44,17 +44,21 @@ class UserTest < ActiveSupport::TestCase
     assert_not dup_user.valid?
   end
 
-
-  test "email validation should accept valid addresses" do
-    valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
-                        first.last@foo.jp alice+bob@baz.cn]
+  test 'email validation should accept valid addresses' do
+    valid_addresses = %w[
+                        user@example.com
+                        USER@foo.COM
+                        A_US-ER@foo.bar.org
+                        first.last@foo.jp
+                        alice+bob@baz.cn
+                      ]
     valid_addresses.each do |valid_address|
       @user.email = valid_address
       assert @user.valid?, "#{valid_address.inspect} should be valid"
     end
   end
 
-  test "email validation should reject invalid addresses" do
+  test 'email validation should reject invalid addresses' do
     invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                           foo@bar_baz.com foo@bar+baz.com]
     invalid_addresses.each do |invalid_address|
@@ -72,5 +76,4 @@ class UserTest < ActiveSupport::TestCase
     @user.first_name = 'A' * 51
     assert_not @user.valid?
   end
-
 end
