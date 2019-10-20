@@ -18,6 +18,7 @@
 
 class User < ApplicationRecord
   belongs_to :organization
+  accepts_nested_attributes_for :organization
 
   validates :last_name, length: { maximum: 50 }
   validates :first_name, length: { maximum: 50 }
