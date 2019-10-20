@@ -18,7 +18,8 @@
   .field
     = f.label :is_active
     = f.check_box :is_active
-  .field
-    = f.label :organization
-    = f.text_field :organization
+  = f.fields_for :organization do |org|
+    .field
+      = org.label :name
+      = org.text_field :name
   .actions = f.submit

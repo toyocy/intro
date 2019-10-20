@@ -14,7 +14,7 @@ p
   = @user.is_active
 p
   strong Organization:
-  = @user.organization
+  = @user.organization.name
 
 => link_to 'Edit', edit_user_path(@user)
 '|
